@@ -101,6 +101,7 @@ def evaluate(beam_size):
             context_vector = (encoder_out_small * alpha_t.unsqueeze(2)).sum(dim=1)  
             context_vector_prime = (s_t * beta_t) + (context_vector * one_minus_beta)
 
+            # scores = decoder.fc(torch.cat([h, context_vector_prime], dim =1))
             scores = decoder.fc(h +  context_vector_prime)  
 
             scores = F.log_softmax(scores, dim=1)

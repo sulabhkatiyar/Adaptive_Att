@@ -110,8 +110,6 @@ def main():
             break
         if epochs_since_improvement > 0 and epochs_since_improvement % 2 == 0:
             adjust_learning_rate(decoder_optimizer, 0.95)
-            if fine_tune_encoder:
-                adjust_learning_rate(encoder_optimizer, 0.9)
 
         train(train_loader=train_loader,
               encoder=encoder,

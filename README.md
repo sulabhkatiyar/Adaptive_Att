@@ -9,7 +9,7 @@ I have used Flickr8k and Flickr30k datasets for experiments. In the paper, autho
 
 (a) Only Decoder (Caption-Generator) is trained with no fine-tuning of CNN. VGG-16 CNN is used as Encoder. 
 
-(b) CNN is fine-tuned with learning rate of 1e-5 and Caption Generator is trained with learning rate of 4e-4. The authors of paper have trained their model for 80 epochs and started CNN fine-tuning after completion of first 20 epochs. However, due to resource constraints I have trained the model for 20 epochs only and I have trained both CNN and Decoder right from the beginning.
+(b) CNN is fine-tuned with learning rate of 1e-5 and Caption Generator is trained with learning rate of 4e-4. The authors of paper have trained their model for 50 epochs and started CNN fine-tuning after completion of first 20 epochs. However, due to resource constraints I have trained the model for 20 epochs only and I have trained both CNN and Decoder right from the beginning.
 
 The hyperparameter settings used and other implementation details are as follows. For comparison, I have mentioned the settings used in the original implementation by authors, as well.
 

@@ -16,7 +16,7 @@ The hyperparameter settings used and other implementation details are as follows
 | Setting | This implementation | Original Implementation |
 |---|---|---|
 | Decoder Learning Rate | 4e-4 | 5e-4 |
-| Decoder Learning Rate | 1e-5 | 1e-5 |
+| CNN Learning Rate | 1e-5 | 1e-5 |
 | Total epochs | 20 | 50 |
 | Start Fine-Tuning CNN at | 1 epoch | 20 epochs |
 | Batch size | 32 | 80 |

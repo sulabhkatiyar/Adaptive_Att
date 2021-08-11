@@ -22,3 +22,4 @@ The hyperparameter settings used and other implementation details are as follows
 | Batch size | 32 | 80 |
 | LSTM hidden units | 512 | 512 |
 | Early stopping at | 8 epochs | 6 epochs |
+| GPU used | NVIDIA Quadro RTX 4000 | Titan X |

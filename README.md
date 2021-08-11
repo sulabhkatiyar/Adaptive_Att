@@ -22,4 +22,19 @@ The hyperparameter settings used and other implementation details are as follows
 | Batch size | 32 | 80 |
 | LSTM hidden units | 512 | 512 |
 | Early stopping at | 8 epochs | 6 epochs |
-| GPU used | NVIDIA Quadro RTX 4000 | Titan X |
+| GPU used | NVIDIA Quadro RTX 4000 | NVIDIA Titan X |
+
+## Results
+
+The authors have not released results on experiments with Flickr8k dataset. So I cannot compare my results with original implementation. On Flickr8k the results can be summarized as:
+
+|Implementation | CNN | Fine Tune |Beam | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Ours | VGG-16 | No | 3 | 0.624 | 0.440 | 0.303 | 0.205 | 0.199 | 0.524 | 0.144 | 0.457 |
+| Ours | VGG-16 | No | 5 | 0.619 | 0.438 | 0.304 | 0.208 | 0.194 | 0.508 | 0.140 | 0.453 |
+| Ours | ResNet-152 | Yes | 3 | 0.664 | 0.481| 0.338 | 0.233 | 0.209 | 0.587 | 0.150| 0.477 |
+| Ours | ResNet-152 | Yes | 5 | 0.659 | 0.480 | 0.339 | 0.235 | 0.207 | 0.589 | 0.150| 0.476|
+
+
+
+

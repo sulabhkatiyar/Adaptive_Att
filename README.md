@@ -26,15 +26,40 @@ The hyperparameter settings used and other implementation details are as follows
 
 ## Results
 
-The authors have not released results on experiments with Flickr8k dataset. So I cannot compare my results with original implementation. On Flickr8k the results can be summarized as:
+The authors have not released results on experiments with Flickr8k dataset. So I cannot compare my results with original implementation. On Flickr8k the results from my implementation can be summarized as:
 
-|Implementation | CNN | Fine Tune |Beam | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| Ours | VGG-16 | No | 3 | 0.624 | 0.440 | 0.303 | 0.205 | 0.199 | 0.524 | 0.144 | 0.457 |
-| Ours | VGG-16 | No | 5 | 0.619 | 0.438 | 0.304 | 0.208 | 0.194 | 0.508 | 0.140 | 0.453 |
-| Ours | ResNet-152 | Yes | 3 | 0.664 | 0.481| 0.338 | 0.233 | 0.209 | 0.587 | 0.150| 0.477 |
-| Ours | ResNet-152 | Yes | 5 | 0.659 | 0.480 | 0.339 | 0.235 | 0.207 | 0.589 | 0.150| 0.476|
+| CNN | Fine Tune |Beam | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
+|---|---|---|---|---|---|---|---|---|---|---|
+| VGG-16 | No | 3 | 0.624 | 0.440 | 0.303 | 0.205 | 0.199 | 0.524 | 0.144 | 0.457 |
+| VGG-16 | No | 5 | 0.619 | 0.438 | 0.304 | 0.208 | 0.194 | 0.508 | 0.140 | 0.453 |
+| ResNet-152 | Yes | 3 | 0.664 | 0.481| 0.338 | 0.233 | 0.209 | 0.587 | 0.150| 0.477 |
+| ResNet-152 | Yes | 5 | 0.659 | 0.480 | 0.339 | 0.235 | 0.207 | 0.589 | 0.150| 0.476|
 
 
 
+### Reproducing the results:
+1. Download 'Karpathy Splits' for train, validation and testing from [here](http://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip).
+2. For evaluation, the model already generates BLEU scores. In addition, it saves results and image annotations as needed in MSCOCO evaluation format. So for generation of METEOR, CIDEr, ROUGE-L and SPICE evaluation metrics, the evaluation code can be downloaded from [here](https://github.com/cocodataset/cocoapi/tree/master/PythonAPI).
+
+#### Prerequisites:
+1. This code has been tested on python 3.6.9 but should word on all python versions > 3.6.
+2. Pytorch v1.5.0
+3. CUDA v10.1
+4. Torchvision v0.6.0
+5. Numpy v.1.15.0
+6. pretrainedmodels v0.7.4 (Install from [source](https://github.com/Cadene/pretrained-models.pytorch.git)). (I think all versions will work but I have listed here for the sake of completeness.)
+
+
+#### Execution:
+1. First set the path to Flickr8k/Flickr30k/MSCOCO data folders in create_input_files.py file ('dataname' replaced by f8k/f30k/coco).
+2. Create processed dataset by running: 
+> python create_input_files.py
+
+3. To train the model:
+> python train.py
+
+4. To evaluate: 
+> python eval.py beamsize 
+
+(eg.: python train_f8k.py 20)
 
